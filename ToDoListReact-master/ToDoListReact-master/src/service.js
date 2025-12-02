@@ -2,8 +2,7 @@
 import axios from 'axios';
 
 // כתובת הבסיס היא השרת בלבד
-const apiBaseUrl = 'http://localhost:5233'; 
-
+const apiBaseUrl = process.env.REACT_APP_API_URL;
 // 1. יצירת מופע axios מותאם אישית
 const api = axios.create({
     baseURL: apiBaseUrl 
@@ -73,7 +72,7 @@ export default {
   },
 
   // ******************************
-  // פונקציות המשימות המוגנות - קוראות לנתיבים הישירים (/items)
+  // פונקציות המשימות המוגנות - קוראשות לנתיבים הישירים (/items)
   // ******************************
   getTasks: async () => {
     const result = await api.get('/items'); 
