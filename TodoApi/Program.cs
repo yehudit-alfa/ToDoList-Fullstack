@@ -240,6 +240,7 @@ static string GenerateToken(User user, IConfiguration configuration)
     // 1. הגדרת ה-Claims (הצהרות): מה המידע שאנחנו מכניסים לטוקן
     var claims = new List<Claim>
     {
+
         new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
         new Claim(ClaimTypes.Name, user.Username!)
     };
