@@ -66,14 +66,14 @@ builder.Services.AddAuthorization();
 var app = builder.Build();
 
 
-//using (var scope = app.Services.CreateScope())
-//{
-//    // טפל בכל השירותים הדרושים באמצעות ה-Scope
-//    var dbContext = scope.ServiceProvider.GetRequiredService<ToDoDbContext>();
+using (var scope = app.Services.CreateScope())
+{
+    // טפל בכל השירותים הדרושים באמצעות ה-Scope
+    var dbContext = scope.ServiceProvider.GetRequiredService<ToDoDbContext>();
 
-//    // הפעל את ה-Migrations הממתינים
-//    dbContext.Database.Migrate();
-//}
+    // הפעל את ה-Migrations הממתינים
+    dbContext.Database.Migrate();
+}
 
 // ********** 3. הגדרות סביבת ריצה (APP) **********
 
