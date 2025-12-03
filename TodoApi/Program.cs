@@ -19,9 +19,9 @@ builder.Services.AddCors(options =>
                       policy =>
                       {
                           // הרשאה כללית לכל מקור, כותרת ו-Method (עבור פיתוח)
-                          policy.AllowAnyOrigin()
-                                .AllowAnyHeader()
-                                .AllowAnyMethod();
+                          policy.WithOrigins("https://todolist-client-0241.onrender.com")                               
+                          .AllowAnyHeader()
+                           .AllowAnyMethod();
                       });
 });
 
